@@ -38,9 +38,11 @@ df <- cbind(df, cluster = genre_cluster$cluster)
 df$cluster <- as.factor(df$cluster)
 
 # Plot
-fig <- plot_ly(df, x = ~bpm, y = ~energy, z = ~danceability, color = ~cluster, colors = )
+fig <- plot_ly(df, x = ~bpm, y = ~energy, z = ~danceability, color = ~cluster, 
+               colors = 'Paired')
 fig <- fig %>% add_markers()
 fig <- fig %>% layout(scene = list(xaxis = list(title = 'Beats Per Minute'),
                                    yaxis = list(title = 'Energy'),
                                    zaxis = list(title = 'Danceability')))
-fig
+
+# At end, enter 'fig' command to show this 3d-plot at Viewer tab on R-studio
